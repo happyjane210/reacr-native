@@ -1,0 +1,96 @@
+Android 환경변수 설정
+
+1. 
+Terminal 열고
+
+ls -al 입력
+
+.bash_profile 이 있는지 확인, 없으면 생성
+
+
+
+2.
+.bash_profile 을 연다
+
+vi ~/.bash_profile
+
+
+
+3.
+i/a 를 눌러서 insert 모드로 변경 (취소는 esc)
+
+
+
+4. 환경변수 설정
+*adb 환경변수 설정
+export ADB_HOME=/Users/jane/Library/Android/sdk/platform-tools
+export PATH=${ADB_HOME}:$PATH
+
+*emulator 환경변수 설정
+export EMULATOR_HOME=/Users/jane/Library/Android/sdk/emulator
+export PATH=${EMULATOR_HOME}:$PATH
+
+*SDK 환경변수 설정
+export ANDROID_SDK_ROOT=/Users/jane/Library/Android/sdk
+export PATH=${ANDROID_SDK_ROOT}:$PATH
+
+
+
+5. 환경변수 적용
+source .ash_profile
+
+
+
+6. ADB 버전 확인 -> adb 입력
+안되면 7번
+
+
+
+7. 터미널에서 vi 편집기로 이동
+vi .zshrc
+
+
+
+8. 내용 추가 후 저장 :wq
+ if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+ fi
+
+
+
+9. ADB와 Emulator 버전 확인
+터미널에 adb, emulator  각 입력후 뭔가 쫙 나오면 실행 가능한 상태
+
+
+
+10. 지금 실행이 되고있으면 기존 돌고있는 서버 죽이는 명령어 입력 가능
+add kill-server
+
+
+
+11. ADB 시작 명령어
+adb kill-server                   (기존 실행 프로그램 중지)
+abd start-server                  (프로그램 새로 시작)
+emulator -avd Pixel_2_API_29      (emulator 시작)
+                                  (Pixel_2_API_29 은 view details 에 있는 애뮬레이터 이름임)
+
+- 한번 kill 하고 또 kill 명령어 입력하면 못한다고 뜸
+(예시)
+jane@JUEUNui-MacBookPro ~ % adb kill-server                  (성공)
+jane@JUEUNui-MacBookPro ~ % adb kill-server                  (실패)
+cannot connect to daemon at tcp:5037: Connection refused
+
+
+
+12. 환경변수 경로 확인 명령어
+echo $변수명
+
+ex)
+echo $ANDROID_SDK_ROOT           (입력하면 내가 지정한 경로가 나와야함)
+					(/Users/jane/Library/Android/sdk)
+
+echo $PATH
+
+
+
+** 환경변수 변경하면 항상 커멘드창 닫고 다시 켜줘야함
