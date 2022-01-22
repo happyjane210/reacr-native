@@ -1,0 +1,18 @@
+RN 앱 개발 사전 지식
+
+React-Native
+● 웹개발:오픈플랫폼,특정회사종속성없는플랫폼
+– ms,google,mozilla
+– apple,Facebook
+– Html,css,js스킬,에디터+브라우저만있으면개발가능 – 라이브러리,sdk필요
+
+● 앱개발:특정회사종속적->기술의다양성이떨어짐
+– 매년개발자컨퍼런스에나오는API/SDK업데이트에의존해야함
+– 만들라는데로 만들어야함 ex) 목록 렌더링 -> 리스트뷰 -> 리사이클러뷰 – 개발환경구성한느데사전지식많이필요,툴이해
+– androidstudio(intellij),Xcode
+– SDK와API에대한이해가필요함
+
+● 네이티브 개발
+– 모바일:iOS,android
+– PC:.NET
+– iOS:Swift,Object-C(두언어개발방식전혀다름)
