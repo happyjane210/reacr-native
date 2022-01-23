@@ -71,8 +71,9 @@ add kill-server
 11. ADB 시작 명령어
 adb kill-server                   (기존 실행 프로그램 중지)
 abd start-server                  (프로그램 새로 시작)
-emulator -avd Pixel_2_API_29      (emulator 시작)
-                                  (Pixel_2_API_29 은 view details 에 있는 애뮬레이터 이름임)
+emulator -avd Pixel_2_API_30      (emulator 시작)
+                                  (Pixel_2_API_30 은 view details 에 있는 애뮬레이터 이름임)
+				(API 30 버전으로 실행함)
 
 - 한번 kill 하고 또 kill 명령어 입력하면 못한다고 뜸
 (예시)

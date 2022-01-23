@@ -1,0 +1,66 @@
+react-native 프로젝트 시작하기
+
+1. 폴더 생성 후 아래 명령어로 cli 설치
+sudo npm install -g expo-cli
+
+2. 00app 을 프로젝트 이름으로 typescript 을 사용해 프로젝트 생성
+expo init 000app -t expo-template-blank-typescript
+
+3. 해당 프로젝트 폴더로 이동해 애뮬레이터 염
+- cd firstapp
+- npm start
+# you can open iOS, Android, or web from here, or run them directly with the commands below.
+- npm run android
+- npm run ios
+- npm run web
+
+
+** Ctrl + C 서버 멈추기
+** npm run android  서버 재시작
+
+==============================================================
+
+
+Next.js -> 웹프레임워크 -> UI 템플릿이 React
+Expo -> 하이브리드앱 개발 도구 -> UI 템플릿이 React
+
+------------------
+
+// App.tsx
+<View>, <Text> : Core Component
+
+
+------------------
+
+네비게이션 환경구성 인스톨
+// react-navigation
+https://reactnavigation.org/
+
+- SafeAreaContext(노치 및 펀치홀 영역 제어)
+  expo install react-native-screens react-native-safe-area-context
+
+- NAVIGATION,  https://reactnavigation.org/docs/getting-started  
+  -> npm install @react-navigation/native
+
+- Tab Navigtion, https://reactnavigation.org/docs/tab-based-navigation
+  -> npm install @react-navigation/bottom-tabs
+
+- Stack Navigation, https://reactnavigation.org/docs/hello-react-navigation
+  -> npm install @react-navigation/native-stack
+
+npm i @react-native-async-storage/async-storage
+
+npm install --save nanoid
+
+
+// 탭 내비게이션
+
+App.tsx 코드 상단에 import 해줌
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+components 폴더 생성 후 하위에 새폴더 만듬
+Home, List, Tasks
+
+각 네비게이션 탭에 해당하는 컴포넌트, 이 컴포넌트 간의 이동(화면이동).
+
