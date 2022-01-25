@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
+import { StyleSheet } from 'react-native';
+
+//https://ionic.io/ionicons
 import Ionicons from "@expo/vector-icons/Ionicons"
 
 import { NavigationContainer } from '@react-navigation/native';
-import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // 탭별 컴포넌트
 import Home from "./components/Home"
@@ -24,12 +26,12 @@ const screenOptions = ({ route }) => ({
     // 탭 경로에 따른 아이콘 결정
     if (route.name === "Home") {
       iconName = focused
-        ? "ios-information-circle"
-        : "ios-information-circle-outline";
+        ? "home"
+        : "home-outline";
     } else if (route.name === "List") {
-      iconName = focused ? "ios-list-box" : "ios-list";
+      iconName = focused ? "list" : "list-outline";
     } else if (route.name === "Task") {
-      iconName = "checkmark-outline";
+      iconName = focused ? "checkmark" : "checkmark-outline";
     }
 
     // You can return any component that you like here!
@@ -42,25 +44,27 @@ const screenOptions = ({ route }) => ({
 
 export default function App() {
   return (
-   <NavigationContainer>
-     <Tab.Navigator  screenOptions={screenOptions}>
-       {/* 실제 탭 목록 */}
-       <Tab.Screen name="Home" component={Home}/>
-       <Tab.Screen name="List" component={List}/>
-       <Tab.Screen name="Task" component={Task}/>
-     </Tab.Navigator>
-   </NavigationContainer>
+    <SafeAreaProvider>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={screenOptions}>
+        {/* 실제 탭 목록 */}
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="List" component={List} />
+        <Tab.Screen name="Task" component={Task} />
+      </Tab.Navigator>
+    </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#fff",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+// });
 
 // sytlesheet 는 컴포넌트 밖에 만들어주는게 좋음, 컴포넌트가 생성될때 스타일도 함께 계속 생성되기 때문?
 // 네비게이션에 라우팅을 넣어서 컴포넌트 불러오게함
