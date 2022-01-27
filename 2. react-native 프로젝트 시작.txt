@@ -1,4 +1,4 @@
-react-native 프로젝트 시작하기
+ react-native 프로젝트 시작하기
 
 1. 폴더 생성 후 아래 명령어로 cli 설치
 sudo npm install -g expo-cli
@@ -45,6 +45,7 @@ https://reactnavigation.org/
 - Tab Navigtion, https://reactnavigation.org/docs/tab-based-navigation
   -> npm install @react-navigation/bottom-tabs
 
+// 스택네비게이션 - 스택구조로 컴포넌트를 이동할 때 상용
 - Stack Navigation, https://reactnavigation.org/docs/hello-react-navigation
   -> npm install @react-navigation/native-stack
 
